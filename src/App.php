@@ -6,10 +6,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 
-class Application implements HttpKarnelInterface
+class App implements HttpKernelInterface
 {
     public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true)
     {
@@ -20,15 +22,18 @@ class Application implements HttpKarnelInterface
         
         $matcher = new UrlMatcher($routes, $context);
         
+        $controllerResolver =new ControllerResolver();
+        $argumentResolver =new ArgumentResolver();
+
         try {
-            $response = new Response();
-            
-            extract($matcher->match($request->getPathInfo()));
-            
-            include sprintf('%s.php', $_route);
+            $request->attributes->add($matcher->match($request->getPathInfo()));
+            $controller = $controllerResolver->getController($request);
+            $arguments = $argumentResolver->getArguments($request, $controller);
+            return call_user_func_array($controller, $arguments);
+
         }
         catch (ResourceNotFoundException $e) {
-            $response = new Response('Halaman tidak ditemukan', Response::HTTP_NOT_FOUND);
+            return new Response('Halaman tidak ditemukan', Response::HTTP_NOT_FOUND);
         }
    
     }
