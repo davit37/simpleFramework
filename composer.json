@@ -2,7 +2,10 @@
     "require": {
         "symfony/http-foundation": "^4.0",
         "symfony/routing": "^4.0",
-        "symfony/http-kernel": "^4.0"
+        "symfony/http-kernel": "^4.0",
+        "usmanhalalit/pixie": "^2.0",
+        "symfony/property-access": "^4.0",
+        "twig/twig": "^2.4"
     },
     "autoload": {
         "psr-4": {

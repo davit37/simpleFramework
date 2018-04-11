@@ -315,6 +315,65 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "symfony/inflector",
+        "version": "v4.0.8",
+        "version_normalized": "4.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/inflector.git",
+            "reference": "da634a9968162f7c5c94f8d6949a4ede86085304"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/inflector/zipball/da634a9968162f7c5c94f8d6949a4ede86085304",
+            "reference": "da634a9968162f7c5c94f8d6949a4ede86085304",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3"
+        },
+        "time": "2018-01-03T17:15:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Inflector\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Inflector Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "inflection",
+            "pluralize",
+            "singularize",
+            "string",
+            "symfony",
+            "words"
+        ]
+    },
+    {
         "name": "symfony/polyfill-mbstring",
         "version": "v1.7.0",
         "version_normalized": "1.7.0.0",
@@ -373,6 +432,75 @@
             "polyfill",
             "portable",
             "shim"
+        ]
+    },
+    {
+        "name": "symfony/property-access",
+        "version": "v4.0.8",
+        "version_normalized": "4.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/property-access.git",
+            "reference": "e0fef10eb7e11cae9421d8d89024dfeae0acffb7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/property-access/zipball/e0fef10eb7e11cae9421d8d89024dfeae0acffb7",
+            "reference": "e0fef10eb7e11cae9421d8d89024dfeae0acffb7",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "symfony/inflector": "~3.4|~4.0"
+        },
+        "require-dev": {
+            "symfony/cache": "~3.4|~4.0"
+        },
+        "suggest": {
+            "psr/cache-implementation": "To cache access methods."
+        },
+        "time": "2018-01-03T07:38:00+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\PropertyAccess\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony PropertyAccess Component",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "access",
+            "array",
+            "extraction",
+            "index",
+            "injection",
+            "object",
+            "property",
+            "property path",
+            "reflection"
         ]
     },
     {
@@ -453,6 +581,181 @@
             "routing",
             "uri",
             "url"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "v2.4.8",
+        "version_normalized": "2.4.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "7b604c89da162034bdf4bb66310f358d313dd16d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/7b604c89da162034bdf4bb66310f358d313dd16d",
+            "reference": "7b604c89da162034bdf4bb66310f358d313dd16d",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "require-dev": {
+            "psr/container": "^1.0",
+            "symfony/debug": "^2.7",
+            "symfony/phpunit-bridge": "^3.3"
+        },
+        "time": "2018-04-02T09:24:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            },
+            "psr-4": {
+                "Twig\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "usmanhalalit/pixie",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/usmanhalalit/pixie.git",
+            "reference": "5820ef4f62c7be697767fd84830b7ad6fc057375"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/usmanhalalit/pixie/zipball/5820ef4f62c7be697767fd84830b7ad6fc057375",
+            "reference": "5820ef4f62c7be697767fd84830b7ad6fc057375",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "usmanhalalit/viocon": "1.0.*@dev"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.9.4",
+            "phpunit/phpunit": "^4.8"
+        },
+        "time": "2016-04-08T10:58:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pixie": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Muhammad Usman",
+                "email": "hi@usman.it",
+                "role": "Developer"
+            },
+            {
+                "name": "Pavel Puchkin",
+                "email": "i@neoascetic.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "A lightweight, expressive, framework agnostic query builder for PHP.",
+        "homepage": "https://github.com/usmanhalalit/pixie",
+        "keywords": [
+            "database",
+            "mysql",
+            "postgresql",
+            "query builder",
+            "sql",
+            "sqlite"
+        ]
+    },
+    {
+        "name": "usmanhalalit/viocon",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/usmanhalalit/viocon.git",
+            "reference": "0878afee16f15355971fb95bf3c6d297aceff35d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/usmanhalalit/viocon/zipball/0878afee16f15355971fb95bf3c6d297aceff35d",
+            "reference": "0878afee16f15355971fb95bf3c6d297aceff35d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-07-13T19:54:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Viocon": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Muhammad Usman",
+                "email": "hi@usman.it",
+                "role": "Developer"
+            }
+        ],
+        "description": "A simple and flexible Dependency Injection container for PHP.",
+        "homepage": "https://github.com/usmanhalalit/viocon",
+        "keywords": [
+            "container",
+            "di",
+            "ioc",
+            "test"
         ]
     }
 ]

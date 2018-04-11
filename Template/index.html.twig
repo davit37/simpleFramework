@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <td>No</td>
+            <td>Tugas</td>
+            <td>Selesai</td>
+            <td>Pilihan</td>
+        </tr>
+    </thead>
+
+<tbody>
+    {% for i, todo in todos %}
+    <tr>
+        <td>{{i+1}}</td>
+        <td>{{todo.activity}}</td>
+        <td>{{todo.isDone ? 'Selesai':'Belum'}}</td>
+    <td>{% if false == todo.isDone %}<a href="/todo/{{todo.id}}/done">Selesai</a>
+         | {% endif %}<a href="/todo/{{todo.id}}/edit">Edit</a> | <a href="/todo/{{todo.id}}/delete">Hapus</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<p><a href='/todo/new'>Tambah</a></p>

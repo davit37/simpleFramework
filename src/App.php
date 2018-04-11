@@ -2,6 +2,7 @@
 
 namespace ModernFramework;
 
+use ModernFramework\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RequestContext;
@@ -11,11 +12,15 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 
+
 class App implements HttpKernelInterface
 {
+    const BASE_PATH = __DIR__.'/../';
+
     public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true)
     {
-        include __DIR__ . '/../config/routes.php';
+        include self::BASE_PATH.'config/routes.php';
+        include self::BASE_PATH.'config/database.php';
   
         $context = new RequestContext();
         $context->fromRequest($request);
@@ -29,6 +34,10 @@ class App implements HttpKernelInterface
             $request->attributes->add($matcher->match($request->getPathInfo()));
             $controller = $controllerResolver->getController($request);
             $arguments = $argumentResolver->getArguments($request, $controller);
+            if ($controller[0] instanceof Controller) {
+                $controller[0]->setConnection($database);
+            }
+                
             return call_user_func_array($controller, $arguments);
 
         }

@@ -11,10 +11,16 @@ class ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\PropertyAccess\\' => 33,
+            'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -31,6 +37,10 @@ class ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -38,6 +48,14 @@ class ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
+        'Symfony\\Component\\PropertyAccess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/property-access',
+        ),
+        'Symfony\\Component\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/inflector',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
@@ -65,11 +83,36 @@ class ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'V' => 
+        array (
+            'Viocon' => 
+            array (
+                0 => __DIR__ . '/..' . '/usmanhalalit/viocon/src',
+            ),
+        ),
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'P' => 
+        array (
+            'Pixie' => 
+            array (
+                0 => __DIR__ . '/..' . '/usmanhalalit/pixie/src',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita55fe8baaee14a69bf89f5a06775a4e0::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
